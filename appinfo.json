@@ -1,0 +1,41 @@
+{
+    "appKeys": {},
+    "capabilities": [
+        ""
+    ],
+    "companyName": "maylaures@gmail.com",
+    "longName": "Tutorial1",
+    "projectType": "native",
+    "resources": {
+        "media": [
+            {
+                "file": "images/simple_dragon.png",
+                "name": "DRAGON",
+                "type": "png"
+            },
+            {
+                "file": "fonts/ENDOR___.ttf",
+                "name": "ENDOR_40",
+                "type": "font"
+            },
+            {
+                "file": "fonts/ENDORALT.ttf",
+                "name": "ENDOR_80",
+                "type": "font"
+            },
+            {
+                "file": "fonts/perfect-dos-vga.ttf",
+                "name": "sample_font_40",
+                "type": "font"
+            }
+        ]
+    },
+    "sdkVersion": "2",
+    "shortName": "Tutorial1",
+    "uuid": "3ea8d04a-f9bd-4783-998a-66ab557fce36",
+    "versionCode": 1,
+    "versionLabel": "1.0",
+    "watchapp": {
+        "watchface": true
+    }
+}
