@@ -12,7 +12,6 @@ static TextLayer *s_day_layer;
 
 //declare custom font
 static GFont s_time_font;
-static GFont s_date_font;
 
 //bitmap for background
 static BitmapLayer *s_background_layer;
@@ -44,8 +43,8 @@ static void update_time() {
   text_layer_set_text(s_date_layer, s_date_text);
   
   //experiment with the day
-  static char s_day_text[] = "Sun";
-  strftime(s_day_text, sizeof("Sun"),"%a", tick_time);
+  static char s_day_text[] = "Mon";
+  strftime(s_day_text, sizeof("Mon"),"%a", tick_time);
   text_layer_set_text(s_day_layer, s_day_text);
 }
 
@@ -58,15 +57,13 @@ static void main_window_load(Window *window) {
   layer_add_child(window_get_root_layer(window), bitmap_layer_get_layer(s_background_layer));
   
   //make a text layer in the window
-  s_time_layer = text_layer_create(GRect(60,0,84,90));
+  s_time_layer = text_layer_create(GRect(0,0,144,90));
   text_layer_set_background_color(s_time_layer, GColorClear);
   text_layer_set_text_color(s_time_layer, GColorBlack);
   text_layer_set_text(s_time_layer, "00:00");
   
-  //create font
-  s_date_font = fonts_load_custom_font(resource_get_handle(RESOURCE_ID_ENDOR_80));
   //create other font
-  s_time_font = fonts_load_custom_font(resource_get_handle(RESOURCE_ID_ENDOR_40));
+  s_time_font = fonts_load_custom_font(resource_get_handle(RESOURCE_ID_PLAINBLACK_30));
   
   //make text aligned, choose font (look like watch)
   text_layer_set_font(s_time_layer, s_time_font);
@@ -76,20 +73,20 @@ static void main_window_load(Window *window) {
   layer_add_child(window_get_root_layer(window), text_layer_get_layer(s_time_layer));
   
   //experiment with date
-  s_date_layer = text_layer_create(GRect(0,85,144,90));
+  s_date_layer = text_layer_create(GRect(0,130,144,90));
   text_layer_set_background_color(s_date_layer, GColorClear);
   text_layer_set_text_color(s_date_layer, GColorBlack);
   text_layer_set_text(s_date_layer, "01.01");
-  text_layer_set_font(s_date_layer, s_date_font);
+  text_layer_set_font(s_date_layer, s_time_font);
   text_layer_set_text_alignment(s_date_layer, GTextAlignmentRight);
   layer_add_child(window_get_root_layer(window), text_layer_get_layer(s_date_layer));
   
   //experiment with the day
-  s_day_layer = text_layer_create(GRect(0,25,144,90));
+  s_day_layer = text_layer_create(GRect(0,70,144,90));
   text_layer_set_background_color(s_day_layer, GColorClear);
   text_layer_set_text_color(s_day_layer, GColorBlack);
-  text_layer_set_text(s_day_layer, "Sun");
-  text_layer_set_font(s_day_layer, s_date_font);
+  text_layer_set_text(s_day_layer, "Mon");
+  text_layer_set_font(s_day_layer, s_time_font);
   text_layer_set_text_alignment(s_day_layer, GTextAlignmentRight);
   layer_add_child(window_get_root_layer(window), text_layer_get_layer(s_day_layer));
   
@@ -106,7 +103,6 @@ static void main_window_unload(Window *window) {
   
   //destroy custom font
   fonts_unload_custom_font(s_time_font);
-  fonts_unload_custom_font(s_date_font);
   
   //Destroy GBitmap
   gbitmap_destroy(s_background_bitmap);

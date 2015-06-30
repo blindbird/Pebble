@@ -9,6 +9,11 @@
     "resources": {
         "media": [
             {
+                "file": "fonts/Plain_Black.ttf",
+                "name": "PLAINBLACK_30",
+                "type": "font"
+            },
+            {
                 "file": "images/simple_dragon.png",
                 "name": "DRAGON",
                 "type": "png"
