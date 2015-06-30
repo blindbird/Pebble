@@ -22,16 +22,6 @@
                 "file": "fonts/ENDOR___.ttf",
                 "name": "ENDOR_40",
                 "type": "font"
-            },
-            {
-                "file": "fonts/ENDORALT.ttf",
-                "name": "ENDOR_80",
-                "type": "font"
-            },
-            {
-                "file": "fonts/perfect-dos-vga.ttf",
-                "name": "sample_font_40",
-                "type": "font"
             }
         ]
     },
